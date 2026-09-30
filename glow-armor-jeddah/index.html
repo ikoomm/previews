@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Glow Armor | Concept preview by KOOM</title>
+<meta name="description" content="Concept preview by KOOM. Not the official website.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.7;-webkit-text-size-adjust:100%}
+html[lang="ar"] [lang="en"]{display:none!important}html[lang="en"] [lang="ar"]{display:none!important}
+a{color:inherit}img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+.concept{background:var(--bar-bg);color:var(--bar-ink);font-size:13px;line-height:1.5;padding:9px 20px;text-align:center}
+.concept a{text-underline-offset:3px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font-family:var(--f-display);font-weight:700;font-size:20px;text-decoration:none;letter-spacing:0}
+.lang{font:inherit;font-size:14px;background:transparent;color:inherit;border:1px solid currentColor;border-radius:99px;padding:5px 16px;cursor:pointer}
+.lang:hover{background:var(--ink);color:var(--bg)}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.2;font-weight:700}
+h1{font-size:clamp(38px,7vw,74px)}h2{font-size:clamp(28px,4vw,42px)}h3{font-size:21px}
+p{margin:0 0 1em;max-width:62ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 24px;border-radius:var(--r);text-decoration:none;font-weight:700;font-size:16px;border:2px solid transparent;transition:transform .15s,background .15s}
+.btn:active{transform:translateY(1px)}
+.btn.wa{background:var(--accent);color:var(--on-accent)}
+.btn.wa:hover{filter:brightness(1.08)}
+.btn.ghost{border-color:currentColor;color:inherit}
+.btn.ghost:hover{background:rgba(127,127,127,.15)}
+section{padding-block:clamp(48px,8vw,96px)}
+.proof{padding-block:0}
+.proofbar{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding-block:20px;border-block:1px solid var(--line)}
+.proofbar b{font-family:var(--f-display);font-size:26px}
+.proofbar span.n{color:var(--muted);font-size:15px}
+.svcs{display:grid;gap:16px;margin-top:32px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:flex;flex-direction:column;gap:6px}
+.svc p{color:var(--muted);font-size:15.5px;margin:0}
+.svc .go{margin-top:auto;padding-top:12px;font-weight:700;font-size:15px;text-underline-offset:4px;color:var(--accent-ink)}
+.note{color:var(--muted);font-size:14px;margin-top:18px}
+.visit{display:grid;gap:28px}
+.visit dl{margin:0;display:grid;gap:16px}
+.visit dt{font-size:14px;color:var(--muted)}
+.visit dd{margin:2px 0 0;font-size:19px;font-weight:600}
+footer{border-top:1px solid var(--line);padding-block:32px 56px;color:var(--muted);font-size:14px;line-height:1.7}
+footer p{max-width:70ch}
+@media(min-width:760px){.svcs{grid-template-columns:repeat(2,1fr)}.visit{grid-template-columns:1.1fr 1fr;align-items:start}}
+@media(min-width:1000px){.svcs.n4{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--bg:#191c21;--ink:#eceff3;--muted:#a3abb8;--accent:#ffb545;--accent-ink:#ffc46b;--on-accent:#231400;--card:#22262d;--line:#333944;--bar-bg:#ffb545;--bar-ink:#231400;--r:6px;--f-display:'Readex Pro',system-ui,sans-serif;--f-body:'Readex Pro',system-ui,sans-serif}
+.hero{position:relative;overflow:hidden;padding-block:clamp(56px,10vw,130px)}
+.hero:before{content:"";position:absolute;inset:auto -10% -40% -10%;height:90%;background:radial-gradient(60% 60% at 50% 100%,rgba(255,181,69,.35),transparent 70%)}
+.hero:after{content:"";position:absolute;top:-20%;bottom:-20%;width:22%;inset-inline-start:-30%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);animation:sweep 2.4s .4s ease-out 1 forwards}
+@keyframes sweep{to{inset-inline-start:130%}}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(46px,10vw,116px);letter-spacing:-.02em}
+.hero .tag{font-size:clamp(20px,3vw,30px);color:var(--accent-ink);margin:14px 0 8px;font-weight:600}
+.hero p.sub{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:14px;color:var(--muted)}
+.svc{background:#22262d}
+</style></head><body>
+<div class="concept"><span lang="ar">معاينة مفهومية أعدّها KOOM. ليست الموقع الرسمي لـالدرع المتوهج.</span><span lang="en">Concept preview prepared by KOOM. This is not the official website of Glow Armor.</span></div>
+<header class="top wrap"><a class="brand" href="#"><span lang="ar">الدرع المتوهج</span><span lang="en">Glow Armor</span></a><button class="lang" id="lang" type="button">EN</button></header>
+<main>
+<section class="hero"><div class="wrap"><h1><span lang="ar">الدرع المتوهج</span><span lang="en">Glow Armor</span></h1><p class="tag"><span lang="ar">لمعان يدوم. وحماية تبقى.</span><span lang="en">Gloss that lasts. Protection that stays.</span></p><p class="sub"><span lang="ar">تلميع وحماية وعناية شاملة بسيارتك في الرحاب، جدة.</span><span lang="en">Polish, protection and full car care in Al Rehab, Jeddah.</span></p><ul class="chips"><li><span lang="ar">تلميع خارجي</span><span lang="en">Exterior polish</span></li><li><span lang="ar">تنظيف وترطيب داخلي</span><span lang="en">Interior clean and conditioning</span></li><li><span lang="ar">تظليل النوافذ</span><span lang="en">Window tint</span></li><li><span lang="ar">عازل وأفلام حماية PPF</span><span lang="en">Insulation and PPF film</span></li></ul><div class="btns"><a lang="ar" class="btn wa" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85." target="_blank" rel="noopener">راسلنا على واتساب</a><a lang="en" class="btn wa" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener">Message us on WhatsApp</a><a class="btn ghost" href="tel:+966557282470"><span lang="ar">اتصل الآن</span><span lang="en">Call now</span></a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Glow%20armor%20%D8%A7%D9%84%D8%AF%D8%B1%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%87%D8%AC%20%D8%A7%D9%84%D8%B1%D8%AD%D8%A7%D8%A8%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener"><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div></div></section>
+<section class="proof"><div class="wrap"><div class="proofbar"><b>&#9733; 5.0</b><span class="n"><span lang="ar">١٣٨ تقييم على خرائط Google (كما يظهر في سبتمبر ٢٠٢٦)</span><span lang="en">138 Google Maps reviews (as shown in September 2026)</span></span></div></div></section>
+<section id="services"><div class="wrap"><h2><span lang="ar">الخدمات</span><span lang="en">Services</span></h2><div class="svcs n4"><article class="svc"><h3><span lang="ar">تلميع خارجي</span><span lang="en">Exterior polish</span></h3><p><span lang="ar">إعادة لمعان الطلاء وتنعيم سطحه.</span><span lang="en">Restores paint gloss and smooths the surface.</span></p><a lang="ar" class="go" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%3A%20%D8%AA%D9%84%D9%85%D9%8A%D8%B9%20%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A" target="_blank" rel="noopener">اطلب عبر واتساب</a><a lang="en" class="go" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%3A%20Exterior%20polish" target="_blank" rel="noopener">Ask on WhatsApp</a></article><article class="svc"><h3><span lang="ar">تنظيف وترطيب داخلي</span><span lang="en">Interior clean and conditioning</span></h3><p><span lang="ar">تنظيف المقصورة وترطيب الأسطح الداخلية.</span><span lang="en">Deep clean of the cabin and conditioning of interior surfaces.</span></p><a lang="ar" class="go" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%3A%20%D8%AA%D9%86%D8%B8%D9%8A%D9%81%20%D9%88%D8%AA%D8%B1%D8%B7%D9%8A%D8%A8%20%D8%AF%D8%A7%D8%AE%D9%84%D9%8A" target="_blank" rel="noopener">اطلب عبر واتساب</a><a lang="en" class="go" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%3A%20Interior%20clean%20and%20conditioning" target="_blank" rel="noopener">Ask on WhatsApp</a></article><article class="svc"><h3><span lang="ar">تظليل النوافذ</span><span lang="en">Window tint</span></h3><p><span lang="ar">خصوصية أكثر وحرارة أقل داخل السيارة.</span><span lang="en">More privacy and less heat inside the car.</span></p><a lang="ar" class="go" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%3A%20%D8%AA%D8%B8%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%86%D9%88%D8%A7%D9%81%D8%B0" target="_blank" rel="noopener">اطلب عبر واتساب</a><a lang="en" class="go" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%3A%20Window%20tint" target="_blank" rel="noopener">Ask on WhatsApp</a></article><article class="svc"><h3><span lang="ar">عازل وأفلام حماية PPF</span><span lang="en">Insulation and PPF film</span></h3><p><span lang="ar">طبقة شفافة تحمي الطلاء من الحصى والخدوش.</span><span lang="en">A clear layer that guards paint from stone chips and scratches.</span></p><a lang="ar" class="go" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%3A%20%D8%B9%D8%A7%D8%B2%D9%84%20%D9%88%D8%A3%D9%81%D9%84%D8%A7%D9%85%20%D8%AD%D9%85%D8%A7%D9%8A%D8%A9%20PPF" target="_blank" rel="noopener">اطلب عبر واتساب</a><a lang="en" class="go" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%3A%20Insulation%20and%20PPF%20film" target="_blank" rel="noopener">Ask on WhatsApp</a></article></div><p class="note"><span lang="ar">أمثلة على الخدمات مأخوذة من نشاطكم المعلن. نعدّل القائمة والأسعار حسب ما تريدون.</span><span lang="en">Sample services based on your public listing. We adapt the list and prices to what you actually offer.</span></p></div></section>
+<section id="visit" style="padding-top:0"><div class="wrap visit"><div><h2><span lang="ar">زورونا أو راسلونا</span><span lang="en">Visit or message us</span></h2><p style="margin-top:14px"><span lang="ar">أرسلوا نوع السيارة والخدمة المطلوبة على واتساب، ونرد عليكم بالتفاصيل.</span><span lang="en">Send your car model and the service you need on WhatsApp and we will reply with details.</span></p><div class="btns"><a lang="ar" class="btn wa" href="https://wa.me/966557282470?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85." target="_blank" rel="noopener">راسلنا على واتساب</a><a lang="en" class="btn wa" href="https://wa.me/966557282470?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener">Message us on WhatsApp</a><a class="btn ghost" href="tel:+966557282470"><span lang="ar">اتصل الآن</span><span lang="en">Call now</span></a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Glow%20armor%20%D8%A7%D9%84%D8%AF%D8%B1%D8%B9%20%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%87%D8%AC%20%D8%A7%D9%84%D8%B1%D8%AD%D8%A7%D8%A8%20%D8%AC%D8%AF%D8%A9" target="_blank" rel="noopener"><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div></div><dl><div><dt><span lang="ar">العنوان</span><span lang="en">Address</span></dt><dd><span lang="ar">أم القرى، الرحاب، جدة 23345</span><span lang="en">Umm Al-Qura, Al Rehab, Jeddah 23345</span></dd></div><div><dt><span lang="ar">الهاتف</span><span lang="en">Phone</span></dt><dd><a href="tel:+966557282470" dir="ltr">055 728 2470</a></dd></div></dl></div></section>
+</main>
+<footer><div class="wrap"><p><span lang="ar">هذه صفحة تجريبية صنعناها في KOOM بناءً على معلومات نشاطكم المنشورة علنًا على خرائط Google، لتروا كيف يمكن أن يكون موقعكم. المحتوى نموذجي.</span><span lang="en">This is a sample page KOOM built from your publicly listed Google Maps details, to show what your website could look like. Content is sample text.</span></p><p><span lang="ar">لا ترغبون في بقاء الصفحة؟ راسلونا على <a href="mailto:hamammalsalmy9@gmail.com">hamammalsalmy9@gmail.com</a> وسنحذفها خلال ٢٤ ساعة.</span><span lang="en">Prefer it not to stay online? Email <a href="mailto:hamammalsalmy9@gmail.com">hamammalsalmy9@gmail.com</a> and we will remove it within 24 hours.</span></p></div></footer>
+<script>(function(){var h=document.documentElement,b=document.getElementById('lang');function set(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';b.textContent=l==='ar'?'EN':'العربية';try{localStorage.setItem('koomLang',l)}catch(e){}}var s='ar';try{s=localStorage.getItem('koomLang')||'ar'}catch(e){}set(s);b.addEventListener('click',function(){set(h.lang==='ar'?'en':'ar')})})();</script>
+</body></html>
