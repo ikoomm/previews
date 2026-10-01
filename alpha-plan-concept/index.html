@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Alpha Plan | Concept website by KOOM</title>
+<meta name="description" content="Concept website sample by KOOM for Alpha Plan. Not the official website.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0c0f1d;--panel:#141a31;--panel2:#1a2140;--ink:#f5f1e8;--muted:#a9b1cc;--line:rgba(255,255,255,.12);--violet:#7b4dff;--amber:#ffb347;--r:14px;--f-h:'Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--f-b:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 var(--f-b);-webkit-text-size-adjust:100%}
+html[lang="ar"] [lang="en"]{display:none!important}html[lang="en"] [lang="ar"]{display:none!important}
+a{color:inherit}:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1160px;margin-inline:auto;padding-inline:22px}
+.concept{background:var(--amber);color:#1a1200;font-size:13px;padding:8px 20px;text-align:center;line-height:1.5}
+header.top{position:sticky;top:0;z-index:20;background:rgba(12,15,29,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:var(--f-h);font-weight:800;font-size:20px;text-decoration:none;letter-spacing:.2px}.brand b{color:var(--amber)}
+nav{display:none;gap:26px;font-size:15px}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.lang{font:inherit;font-size:14px;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer}.lang:hover{background:rgba(255,255,255,.08)}
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;background:#0c0f1d url(stage.jpg) center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,15,29,.15) 0%,rgba(12,15,29,.55) 55%,var(--bg) 100%)}
+.hero .wrap{position:relative;padding-block:90px 64px}
+h1,h2,h3{font-family:var(--f-h);margin:0;line-height:1.18}
+h1{font-size:clamp(38px,7vw,78px);font-weight:800;letter-spacing:-.5px;max-width:14ch}
+.lead{font-size:clamp(18px,2.4vw,24px);color:#d9dcec;max-width:42ch;margin:20px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;border-radius:99px;text-decoration:none;font-weight:600;border:1.5px solid transparent;transition:transform .15s,background .15s}
+.btn.p{background:var(--amber);color:#1a1200}.btn.p:hover{filter:brightness(1.06)}
+.btn.g{border-color:var(--line);color:var(--ink)}.btn.g:hover{background:rgba(255,255,255,.08)}
+section{padding-block:clamp(56px,9vw,104px)}
+h2{font-size:clamp(28px,4.4vw,46px);font-weight:700}
+.sub{color:var(--muted);max-width:56ch;margin:14px 0 0}
+.pillars{display:grid;gap:18px;margin-top:40px}
+.pillar{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.pillar h3{font-size:22px;margin-bottom:8px}.pillar p{color:var(--muted);margin:0}
+.grid{display:grid;gap:16px;margin-top:40px}
+.svc{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--r);padding:24px 24px 22px}
+.svc i{display:block;width:38px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--violet),var(--amber));margin-bottom:16px}
+.svc h3{font-size:20px;margin-bottom:6px}.svc p{color:var(--muted);margin:0;font-size:15.5px}
+.cov{display:grid;gap:16px;margin-top:40px}
+.vid{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:#000;cursor:pointer;padding:0;color:inherit;font:inherit;text-align:start}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .2s,transform .4s}.vid:hover img{opacity:1;transform:scale(1.03)}
+.vid .play{position:absolute;inset:auto auto 18px 18px;inset-inline-start:18px;display:flex;align-items:center;gap:12px;background:rgba(12,15,29,.8);border:1px solid var(--line);border-radius:99px;padding:8px 18px 8px 10px}
+.vid .play span.dot{width:34px;height:34px;border-radius:50%;background:var(--amber);color:#1a1200;display:grid;place-items:center;font-size:14px}
+.vidnote{font-size:13px;color:var(--muted);margin-top:12px}
+.logos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px}
+.logo{height:76px;border:1.5px dashed var(--line);border-radius:12px;display:grid;place-items:center;color:var(--muted);font-size:13px}
+.stories{display:grid;gap:16px;margin-top:22px}
+.story{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.story q{display:block;font-size:19px;line-height:1.6;quotes:none}.story small{display:block;margin-top:14px;color:var(--muted)}
+.contact{background:linear-gradient(120deg,rgba(123,77,255,.22),rgba(255,179,71,.16));border:1px solid var(--line);border-radius:22px;padding:clamp(28px,6vw,60px)}
+.contact dl{display:grid;gap:14px;margin:28px 0 0}.contact dt{font-size:14px;color:var(--muted)}.contact dd{margin:2px 0 0;font-size:20px;font-weight:600}
+footer{border-top:1px solid var(--line);padding-block:30px 60px;color:var(--muted);font-size:14px}footer p{max-width:72ch;margin:0 0 .8em}
+dialog{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);color:var(--ink);max-width:520px;padding:26px}dialog::backdrop{background:rgba(0,0,0,.6)}
+@media(min-width:760px){nav{display:flex}.pillars,.cov{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(3,1fr)}.logos{grid-template-columns:repeat(6,1fr)}.stories{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="concept"><span lang="ar">معاينة مفهومية أعدّتها KOOM. ليست الموقع الرسمي لآلفا بلان. كل النصوص والصور نموذجية.</span><span lang="en">Concept preview prepared by KOOM. Not the official Alpha Plan website. All copy and images are samples.</span></div>
+<header class="top"><div class="wrap"><a class="brand" href="#">ALPHA <b>PLAN</b></a>
+<nav><a href="#about"><span lang="ar">من نحن</span><span lang="en">About</span></a><a href="#services"><span lang="ar">خدماتنا</span><span lang="en">Services</span></a><a href="#coverage"><span lang="ar">التغطيات</span><span lang="en">Coverage</span></a><a href="#contact"><span lang="ar">تواصل</span><span lang="en">Contact</span></a></nav>
+<button class="lang" id="lang" type="button">EN</button></div></header>
+<main>
+<section class="hero"><div class="wrap"><h1><span lang="ar">نصنع الحدث الذي يُذكر</span><span lang="en">We build events people remember</span></h1>
+<p class="lead"><span lang="ar">معارض ومؤتمرات وإنتاج إعلامي، من الفكرة حتى آخر لقطة في التغطية.</span><span lang="en">Exhibitions, conferences and media production, from the first idea to the last frame of coverage.</span></p>
+<div class="btns"><a class="btn p" href="#contact"><span lang="ar">ابدأ فعاليتك</span><span lang="en">Start your event</span></a><a class="btn g" href="#coverage"><span lang="ar">شاهد التغطيات</span><span lang="en">Watch our coverage</span></a></div></div></section>
+
+<section id="about"><div class="wrap"><h2><span lang="ar">فريق واحد. ثلاث خدمات متكاملة.</span><span lang="en">One team. Three connected services.</span></h2>
+<p class="sub"><span lang="ar">نتولى تصميم الفعالية وتنفيذها وتوثيقها، حتى لا تحتاج إلى التنسيق بين أكثر من جهة.</span><span lang="en">We design, run and document your event, so you never coordinate between several vendors.</span></p>
+<div class="pillars">
+<div class="pillar"><h3><span lang="ar">المعارض</span><span lang="en">Exhibitions</span></h3><p><span lang="ar">تصميم الأجنحة وإدارة الحضور والمشاركين وتنسيق الموقع.</span><span lang="en">Booth design, visitor flow, exhibitor coordination and on-site management.</span></p></div>
+<div class="pillar"><h3><span lang="ar">المؤتمرات</span><span lang="en">Conferences</span></h3><p><span lang="ar">برنامج المتحدثين والمسرح والشاشات والتسجيل في مكان واحد.</span><span lang="en">Speaker programme, stage, screens and registration in one place.</span></p></div>
+<div class="pillar"><h3><span lang="ar">الإنتاج الإعلامي</span><span lang="en">Media production</span></h3><p><span lang="ar">تغطية فيديو ميدانية ومقاطع جاهزة للنشر خلال أيام.</span><span lang="en">Field video coverage and publish-ready clips within days.</span></p></div>
+</div></div></section>
+
+<section id="services"><div class="wrap"><h2><span lang="ar">ما نقدّمه</span><span lang="en">What we deliver</span></h2>
+<div class="grid">
+<article class="svc"><i></i><h3><span lang="ar">تصميم الأجنحة</span><span lang="en">Booth design</span></h3><p><span lang="ar">مخططات وتصاميم ثلاثية الأبعاد قبل التنفيذ.</span><span lang="en">Plans and 3D visuals before build.</span></p></article>
+<article class="svc"><i></i><h3><span lang="ar">إدارة الفعاليات</span><span lang="en">Event management</span></h3><p><span lang="ar">خطة تشغيل وفريق ميداني وجدول واضح.</span><span lang="en">An operating plan, an on-site team and a clear schedule.</span></p></article>
+<article class="svc"><i></i><h3><span lang="ar">المسرح والإضاءة</span><span lang="en">Stage and lighting</span></h3><p><span lang="ar">إعداد المسرح والشاشات والصوت حسب طبيعة الحدث.</span><span lang="en">Stage, screens and sound set up for the format of the event.</span></p></article>
+<article class="svc"><i></i><h3><span lang="ar">التغطية بالفيديو</span><span lang="en">Video coverage</span></h3><p><span lang="ar">تصوير ميداني ومونتاج بالعربية والإنجليزية.</span><span lang="en">Field filming and editing in Arabic and English.</span></p></article>
+<article class="svc"><i></i><h3><span lang="ar">التسجيل والحضور</span><span lang="en">Registration</span></h3><p><span lang="ar">تسجيل الزوار وبطاقات الدخول وتقارير الحضور.</span><span lang="en">Visitor registration, badges and attendance reports.</span></p></article>
+<article class="svc"><i></i><h3><span lang="ar">تقرير ما بعد الفعالية</span><span lang="en">Post-event report</span></h3><p><span lang="ar">ملخص بالأرقام والصور والتوصيات للنسخة القادمة.</span><span lang="en">A summary with figures, photos and recommendations for next time.</span></p></article>
+</div></div></section>
+
+<section id="coverage"><div class="wrap"><h2><span lang="ar">من الميدان</span><span lang="en">From the field</span></h2>
+<p class="sub"><span lang="ar">اضغط لتشغيل الفيديو. تظهر الصورة أولاً ولا يُحمَّل الفيديو إلا عند الضغط، فتبقى الصفحة سريعة.</span><span lang="en">Click to play. The poster shows first and the video only loads on click, so the page stays fast.</span></p>
+<div class="cov">
+<button class="vid" type="button" data-title-ar="تغطية مؤتمر" data-title-en="Conference coverage"><img src="conference.jpg" alt="" loading="lazy"><span class="play"><span class="dot">&#9654;</span><span><span lang="ar">تغطية مؤتمر</span><span lang="en">Conference coverage</span></span></span></button>
+<button class="vid" type="button" data-title-ar="جناح معرض" data-title-en="Exhibition stand"><img src="expo.jpg" alt="" loading="lazy"><span class="play"><span class="dot">&#9654;</span><span><span lang="ar">جناح معرض</span><span lang="en">Exhibition stand</span></span></span></button>
+<button class="vid" type="button" data-title-ar="حفل افتتاح" data-title-en="Opening ceremony"><img src="stage.jpg" alt="" loading="lazy"><span class="play"><span class="dot">&#9654;</span><span><span lang="ar">حفل افتتاح</span><span lang="en">Opening ceremony</span></span></span></button>
+</div><p class="vidnote"><span lang="ar">الصور مشاهد ثلاثية الأبعاد نموذجية. تُستبدل بلقطاتكم الحقيقية وروابط الفيديو.</span><span lang="en">Images are sample 3D scenes. They are replaced with your real footage and video links.</span></p></div></section>
+
+<section id="partners"><div class="wrap"><h2><span lang="ar">شركاؤنا وقصص النجاح</span><span lang="en">Partners and success stories</span></h2>
+<div class="logos" aria-label="Partner logos placeholders"><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div><div class="logo"><span lang="ar">شعار شريك</span><span lang="en">Partner logo</span></div></div>
+<div class="stories"><div class="story"><q><span lang="ar">هنا تُكتب شهادة عميل حقيقي بعد موافقته.</span><span lang="en">A real client testimonial goes here, with their permission.</span></q><small><span lang="ar">نص نموذجي. لا توجد شهادة فعلية في هذه المعاينة.</span><span lang="en">Sample text. This preview contains no real testimonial.</span></small></div>
+<div class="story"><q><span lang="ar">هنا قصة نجاح مع الأرقام: الحضور، عدد المشاركين، حجم التغطية.</span><span lang="en">A success story with figures goes here: attendance, exhibitors, coverage reach.</span></q><small><span lang="ar">نص نموذجي. تُستبدل بأرقامكم المعتمدة.</span><span lang="en">Sample text. Replaced with your approved figures.</span></small></div></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact"><h2><span lang="ar">لنخطط لحدثك القادم</span><span lang="en">Let us plan your next event</span></h2>
+<p class="sub"><span lang="ar">أرسل لنا نوع الفعالية والتاريخ التقريبي وعدد الحضور، ونعود إليك بخطة أولية.</span><span lang="en">Send the event type, rough date and expected attendance, and we reply with an outline plan.</span></p>
+<dl><div><dt><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></dt><dd dir="ltr">+966 5X XXX XXXX</dd></div><div><dt><span lang="ar">البريد</span><span lang="en">Email</span></dt><dd dir="ltr">hello@your-domain.com.sa</dd></div></dl>
+<div class="btns"><a class="btn p" href="#"><span lang="ar">أرسل تفاصيل فعاليتك</span><span lang="en">Send your event details</span></a></div></div></div></section>
+</main>
+<footer><div class="wrap"><p><span lang="ar">معاينة تجريبية أعدّتها KOOM (حازم السالمي) لمشروع آلفا بلان، بناءً على وصف المشروع المنشور. المحتوى والصور نموذجية.</span><span lang="en">Sample preview prepared by KOOM (Hazim Alsalmi) for the Alpha Plan project, based on the published project brief. Content and images are samples.</span></p>
+<p><span lang="ar">لا ترغبون في بقاء الصفحة؟ راسلونا على <a href="mailto:hamammalsalmy9@gmail.com">hamammalsalmy9@gmail.com</a> وسنحذفها خلال ٢٤ ساعة.</span><span lang="en">Prefer it not to stay online? Email <a href="mailto:hamammalsalmy9@gmail.com">hamammalsalmy9@gmail.com</a> and we will remove it within 24 hours.</span></p></div></footer>
+<dialog id="dlg"><h3 id="dt" style="font-size:20px"></h3><p style="color:var(--muted)"><span lang="ar">هنا يُدمج فيديو التغطية الحقيقي (YouTube أو Vimeo أو ملف) ويُحمَّل عند الضغط فقط.</span><span lang="en">The real coverage video (YouTube, Vimeo or a file) is embedded here and loads on click only.</span></p><form method="dialog"><button class="btn p" style="border:0;cursor:pointer"><span lang="ar">إغلاق</span><span lang="en">Close</span></button></form></dialog>
+<script>(function(){var h=document.documentElement,b=document.getElementById('lang');function set(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';b.textContent=l==='ar'?'EN':'العربية';try{localStorage.setItem('koomLang',l)}catch(e){}}var s='ar';try{s=localStorage.getItem('koomLang')||'ar'}catch(e){}set(s);b.addEventListener('click',function(){set(h.lang==='ar'?'en':'ar')});var d=document.getElementById('dlg'),t=document.getElementById('dt');document.querySelectorAll('.vid').forEach(function(v){v.addEventListener('click',function(){t.textContent=h.lang==='ar'?v.dataset.titleAr:v.dataset.titleEn;if(d.showModal)d.showModal()})})})();</script>
+</body></html>
