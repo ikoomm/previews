@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Quiz platform | Concept by KOOM</title>
+<meta name="description" content="Working Arabic RTL quiz prototype by KOOM: question bank, timer, instant feedback, results review. Concept, not a client product.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f3ec;--card:#ffffff;--ink:#14213d;--muted:#55607a;--line:#dcd8c8;--brand:#0f766e;--brand-ink:#ffffff;--ok:#146c3a;--okbg:#e3f4e8;--bad:#a61b1b;--badbg:#fbe4e4;--warn:#8a5a00;--f-h:'Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--f-b:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1424;--card:#16203a;--ink:#eef1f8;--muted:#a3adc6;--line:#2a3658;--brand:#2dd4bf;--brand-ink:#04211e;--ok:#6fe39b;--okbg:#12332a;--bad:#ff9a9a;--badbg:#3a1a22;--warn:#ffcf70}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 var(--f-b);min-height:100vh}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer}
+.concept{background:#14213d;color:#fff;font-size:14px;padding:8px 16px;text-align:center;line-height:1.5}
+.wrap{max-width:760px;margin-inline:auto;padding:22px 16px 80px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.logo{font:800 24px var(--f-h);margin:0}.logo span{color:var(--brand)}
+.stat{font-size:14px;color:var(--muted)}
+h2{font:700 clamp(22px,5vw,30px)/1.35 var(--f-h);margin:0 0 6px}
+p.sub{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.sets{display:grid;gap:12px}
+.set{display:flex;align-items:center;gap:14px;text-align:start;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.set:hover{border-color:var(--brand)}
+.set .ico{flex:none;width:46px;height:46px;border-radius:12px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font:700 18px var(--f-h)}
+.set b{display:block;font:700 18px var(--f-h)}.set small{color:var(--muted);font-size:14px}
+.opts{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0 4px}
+.opts label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.opts input{width:20px;height:20px;accent-color:var(--brand)}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:0 0 6px}
+.bar i{display:block;height:100%;width:100%;background:var(--brand);border-radius:99px;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.meta{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:16px}
+.timer{font-variant-numeric:tabular-nums}.timer.low{color:var(--bad);font-weight:600}
+.q{font:700 clamp(21px,5vw,27px)/1.5 var(--f-h);margin:0 0 18px}
+.q[dir=ltr]{text-align:left}
+.answers{display:grid;gap:10px}
+.ans{display:flex;gap:12px;align-items:center;text-align:start;width:100%;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;min-height:56px}
+.ans:hover:not(:disabled){border-color:var(--brand)}
+.ans .k{flex:none;width:32px;height:32px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;color:var(--muted)}
+.ans.ok{border-color:var(--ok);background:var(--okbg)}.ans.bad{border-color:var(--bad);background:var(--badbg)}
+.ans:disabled{cursor:default}
+.fb{margin-top:16px;padding:14px 16px;border-radius:14px;display:none}
+.fb.show{display:block}.fb.ok{background:var(--okbg);color:var(--ok)}.fb.bad{background:var(--badbg);color:var(--bad)}
+.fb b{display:block;margin-bottom:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border:0;border-radius:99px;background:var(--brand);color:var(--brand-ink);font:700 18px var(--f-h)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ring{width:170px;height:170px;margin:4px auto 10px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .t{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:800 40px var(--f-h)}
+.ring .t small{display:block;font:500 14px var(--f-b);color:var(--muted)}
+.rev{margin-top:22px;display:grid;gap:10px}
+.rev div{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+.rev .tag{display:inline-block;font-size:14px;padding:1px 10px;border-radius:99px;margin-inline-end:8px}
+.tag.ok{background:var(--okbg);color:var(--ok)}.tag.bad{background:var(--badbg);color:var(--bad)}
+details{margin-top:28px;font-size:14px;color:var(--muted)}
+summary{cursor:pointer;font-weight:600;color:var(--ink)}
+textarea{width:100%;min-height:150px;margin-top:10px;font:14px/1.5 ui-monospace,Consolas,monospace;direction:ltr;text-align:left;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px}
+.msg{font-size:14px;margin-top:8px}.msg.bad{color:var(--bad)}.msg.ok{color:var(--ok)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="concept"><div>نموذج عملي مفهومي من KOOM · الأسئلة تجريبية وليس منتج عميل</div><div dir="ltr" lang="en">Working concept by KOOM · sample questions, not a client product</div></div>
+<div class="wrap">
+<header class="top"><h1 class="logo">اختبر<span>.</span></h1><div class="stat" id="best" aria-live="polite"></div></header>
+
+<section id="home">
+<h2>اختر اختبارًا</h2>
+<p class="sub">اختبارات قصيرة بنتيجة فورية ومراجعة للأخطاء. يعمل بالجوال والكمبيوتر، ويدعم الكتابة من اليمين لليسار.</p>
+<div class="sets" id="sets"></div>
+<div class="opts card" style="margin-top:14px">
+<label><input type="checkbox" id="optTimer" checked> مؤقت ٢٠ ثانية لكل سؤال</label>
+<label><input type="checkbox" id="optFb" checked> إظهار الإجابة بعد كل سؤال</label>
+<label><input type="checkbox" id="optShuffle" checked> ترتيب عشوائي للخيارات</label>
+</div>
+<details><summary>للمطوّر: إضافة بنك أسئلة (JSON)</summary>
+<p>الصق مجموعة بهذا الشكل ثم اضغط إضافة. تُحفظ في متصفحك فقط. <code>a</code> رقم الإجابة الصحيحة يبدأ من ٠.</p>
+<textarea id="json" spellcheck="false" aria-label="JSON">{"id":"mine","title":"اختبار جديد","icon":"؟","dir":"rtl","questions":[{"q":"٢ + ٢ = ؟","o":["٣","٤","٥"],"a":1,"e":"مجموع العددين أربعة."}]}</textarea>
+<div class="row"><button class="btn ghost" id="addJson" type="button">إضافة المجموعة</button></div>
+<div class="msg" id="jsonMsg" role="status"></div></details>
+</section>
+
+<section id="quiz" hidden>
+<div class="bar" aria-hidden="true"><i id="prog"></i></div>
+<div class="meta"><span id="count"></span><span class="timer" id="timer"></span></div>
+<div class="card">
+<h2 class="q" id="qtext" tabindex="-1"></h2>
+<div class="answers" id="answers" role="group" aria-labelledby="qtext"></div>
+<div class="fb" id="fb" role="status" aria-live="polite"></div>
+<div class="row"><button class="btn" id="next" type="button" hidden>التالي</button></div>
+</div>
+<p class="stat" style="margin-top:12px">اختصارات: ١ ٢ ٣ ٤ للاختيار، Enter للتالي</p>
+</section>
+
+<section id="result" hidden>
+<div class="card" style="text-align:center">
+<div class="ring" id="ring"></div>
+<h2 id="rTitle"></h2><p class="sub" id="rSub"></p>
+<div class="row" style="justify-content:center"><button class="btn" id="again" type="button">إعادة الاختبار</button><button class="btn ghost" id="wrongOnly" type="button">الأسئلة الخاطئة فقط</button><button class="btn ghost" id="home2" type="button">كل الاختبارات</button></div>
+</div>
+<div class="rev" id="rev"></div>
+</section>
+</div>
+
+<script>
+(function(){
+var BUILTIN=[
+{id:'gen',title:'معلومات عامة',icon:'ع',dir:'rtl',questions:[
+{q:'ما عاصمة المملكة العربية السعودية؟',o:['جدة','الرياض','مكة المكرمة','الدمام'],a:1,e:'الرياض هي العاصمة ومقر الحكم.'},
+{q:'في أي عام ميلادي أُعلن توحيد المملكة العربية السعودية؟',o:['١٩٠٢','١٩٣٢','١٩٤٥','١٩٧١'],a:1,e:'أُعلن التوحيد في ٢٣ سبتمبر ١٩٣٢.'},
+{q:'ما أكبر كوكب في المجموعة الشمسية؟',o:['زحل','الأرض','المشتري','المريخ'],a:2,e:'المشتري أكبر الكواكب حجمًا وكتلة.'},
+{q:'أي غاز يحتاجه الإنسان للتنفس؟',o:['الأكسجين','النيتروجين','الهيليوم','ثاني أكسيد الكربون'],a:0,e:'الأكسجين ضروري لعمليات الأيض في الخلايا.'},
+{q:'على أي بحر يطل ميناء جدة؟',o:['الأبيض المتوسط','الأحمر','العربي','الأسود'],a:1,e:'يقع ميناء جدة الإسلامي على ساحل البحر الأحمر.'}]},
+{id:'math',title:'رياضيات سريعة',icon:'∑',dir:'rtl',questions:[
+{q:'ما ناتج ١٢ × ٨؟',o:['٨٦','٩٦','١٠٨','٨٨'],a:1,e:'١٢ × ٨ = ٩٦.'},
+{q:'ما نصف العدد ٢٥٠؟',o:['١٢٥','١٥٠','١٢٠','٥٠٠'],a:0,e:'٢٥٠ ÷ ٢ = ١٢٥.'},
+{q:'كم يساوي ١٥٪ من ٢٠٠؟',o:['٢٠','٢٥','٣٠','٣٥'],a:2,e:'٢٠٠ × ٠٫١٥ = ٣٠.'},
+{q:'مستطيل طوله ٧ وعرضه ٥، ما مساحته؟',o:['١٢','٢٤','٣٥','٤٥'],a:2,e:'المساحة = الطول × العرض = ٣٥.'},
+{q:'ما الجذر التربيعي للعدد ١٤٤؟',o:['١٢','١٤','١٦','٢٤'],a:0,e:'١٢ × ١٢ = ١٤٤.'}]},
+{id:'en',title:'English basics',icon:'En',dir:'ltr',questions:[
+{q:'She ___ to school every day.',o:['go','goes','going','gone'],a:1,e:'Third person singular takes -es: she goes.'},
+{q:'What is the opposite of "big"?',o:['tall','small','long','wide'],a:1,e:'Small is the opposite of big.'},
+{q:'What is the plural of "child"?',o:['childs','childes','children','childrens'],a:2,e:'Child has an irregular plural: children.'},
+{q:'I have ___ apple.',o:['a','an','the','some'],a:1,e:'Use "an" before a vowel sound.'},
+{q:'What is the past tense of "write"?',o:['writed','wrote','written','writing'],a:1,e:'Write, wrote, written.'}]}];
+var KEY='koomQuiz.v1',store={best:{},custom:[]};
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY)||'{}');if(s.best)store.best=s.best;if(Array.isArray(s.custom))store.custom=s.custom}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+function $(i){return document.getElementById(i)}
+var AR='٠١٢٣٤٥٦٧٨٩';function n(x){return String(x).replace(/\d/g,function(d){return AR[d]})}
+function sets(){return BUILTIN.concat(store.custom)}
+var S=null,Q=[],i=0,answers=[],tick=null,left=20,locked=false,wrongOnlyMode=false;
+
+function renderHome(){
+  var box=$('sets');box.innerHTML='';
+  sets().forEach(function(s){
+    var b=document.createElement('button');b.type='button';b.className='set';
+    var best=store.best[s.id];
+    b.innerHTML='<span class="ico"></span><span><b></b><small></small></span>';
+    b.querySelector('.ico').textContent=s.icon||'؟';
+    b.querySelector('b').textContent=s.title;
+    b.querySelector('small').textContent=n(s.questions.length)+' أسئلة'+(best!=null?' · أفضل نتيجة '+n(best)+'٪':'');
+    b.addEventListener('click',function(){start(s,false)});
+    box.appendChild(b);
+  });
+  var vals=Object.keys(store.best).map(function(k){return store.best[k]});
+  $('best').textContent=vals.length?('اختبارات مكتملة: '+n(vals.length)):'';
+}
+function shuffle(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
+function prep(q){
+  var idx=q.o.map(function(_,k){return k});
+  if($('optShuffle').checked)idx=shuffle(idx);
+  return {q:q.q,e:q.e||'',o:idx.map(function(k){return q.o[k]}),a:idx.indexOf(q.a),src:q};
+}
+function show(id){['home','quiz','result'].forEach(function(x){$(x).hidden=(x!==id)});window.scrollTo(0,0)}
+function start(set,onlyWrong){
+  S=set;wrongOnlyMode=onlyWrong;
+  var base=onlyWrong?answers.filter(function(r){return !r.ok}).map(function(r){return r.item.src}):set.questions;
+  if(!base.length)return;
+  Q=base.map(prep);if($('optShuffle').checked&&!onlyWrong)Q=shuffle(Q);
+  i=0;answers=[];show('quiz');ask();
+}
+function ask(){
+  locked=false;var item=Q[i];var rtl=(S.dir!=='ltr');
+  $('count').textContent='السؤال '+n(i+1)+' من '+n(Q.length);
+  $('prog').style.transform='scaleX('+(i/Q.length)+')';
+  var qt=$('qtext');qt.textContent=item.q;qt.dir=rtl?'rtl':'ltr';
+  var box=$('answers');box.innerHTML='';box.dir=rtl?'rtl':'ltr';
+  item.o.forEach(function(t,k){
+    var b=document.createElement('button');b.type='button';b.className='ans';b.dataset.k=k;
+    b.innerHTML='<span class="k"></span><span class="tx"></span>';
+    b.querySelector('.k').textContent=rtl?n(k+1):(k+1);b.querySelector('.tx').textContent=t;
+    b.addEventListener('click',function(){pick(k)});box.appendChild(b);
+  });
+  var fb=$('fb');fb.className='fb';fb.textContent='';$('next').hidden=true;
+  qt.focus({preventScroll:true});
+  clearInterval(tick);
+  if($('optTimer').checked){left=20;paintTimer();tick=setInterval(function(){left--;paintTimer();if(left<=0){clearInterval(tick);pick(-1)}},1000)}else{$('timer').textContent='';}
+}
+function paintTimer(){var t=$('timer');t.textContent='⏱ '+n(left)+' ث';t.className='timer'+(left<=5?' low':'')}
+function pick(k){
+  if(locked)return;locked=true;clearInterval(tick);
+  var item=Q[i],ok=(k===item.a);
+  answers.push({item:item,picked:k,ok:ok});
+  var btns=$('answers').querySelectorAll('.ans');
+  btns.forEach(function(b){b.disabled=true});
+  var showFb=$('optFb').checked;
+  if(showFb){
+    btns[item.a].classList.add('ok');if(k>=0&&!ok)btns[k].classList.add('bad');
+    var fb=$('fb');fb.className='fb show '+(ok?'ok':'bad');
+    var head=ok?'إجابة صحيحة':(k<0?'انتهى الوقت':'إجابة غير صحيحة');
+    fb.innerHTML='<b></b><span></span>';fb.querySelector('b').textContent=head;fb.querySelector('span').textContent=item.e;
+  }
+  var nx=$('next');nx.hidden=false;nx.textContent=(i===Q.length-1)?'عرض النتيجة':'التالي';
+  if(!showFb){setTimeout(next,250)}else{nx.focus()}
+}
+function next(){if(i<Q.length-1){i++;ask()}else finish()}
+function finish(){
+  clearInterval(tick);
+  var ok=answers.filter(function(r){return r.ok}).length,pct=Math.round(ok/answers.length*100);
+  if(!wrongOnlyMode&&(store.best[S.id]==null||pct>store.best[S.id])){store.best[S.id]=pct;save()}
+  var r=2*Math.PI*70,off=r*(1-pct/100);
+  $('ring').innerHTML='<svg viewBox="0 0 170 170" aria-hidden="true"><circle cx="85" cy="85" r="70" fill="none" stroke="var(--line)" stroke-width="14"/><circle cx="85" cy="85" r="70" fill="none" stroke="var(--brand)" stroke-width="14" stroke-linecap="round" stroke-dasharray="'+r+'" stroke-dashoffset="'+off+'"/></svg><div class="t"><div>'+n(pct)+'٪<small>'+n(ok)+' من '+n(answers.length)+'</small></div></div>';
+  var title=pct===100?'ممتاز! علامة كاملة':pct>=70?'أداء جيد جدًا':pct>=40?'محاولة جيدة':'تحتاج مراجعة بسيطة';
+  $('rTitle').textContent=title;
+  $('rSub').textContent=pct===100?'أجبت على جميع الأسئلة بشكل صحيح.':'راجع الأسئلة التي أخطأت فيها بالأسفل ثم أعد المحاولة.';
+  $('wrongOnly').hidden=(ok===answers.length);
+  var rev=$('rev');rev.innerHTML='';
+  answers.forEach(function(r,k){
+    var d=document.createElement('div');d.dir=(S.dir==='ltr')?'ltr':'rtl';
+    var tag=document.createElement('span');tag.className='tag '+(r.ok?'ok':'bad');tag.textContent=r.ok?'صحيحة':'خاطئة';
+    var q=document.createElement('b');q.textContent=r.item.q;
+    var a=document.createElement('div');a.style.cssText='border:0;padding:6px 0 0;background:none;color:var(--muted)';
+    a.textContent=(r.ok?'':'إجابتك: '+(r.picked<0?'—':r.item.o[r.picked])+' · ')+'الصحيحة: '+r.item.o[r.item.a]+(r.item.e?' · '+r.item.e:'');
+    d.appendChild(tag);d.appendChild(q);d.appendChild(a);rev.appendChild(d);
+  });
+  show('result');$('rTitle').focus&&$('rTitle').setAttribute('tabindex','-1');$('rTitle').focus({preventScroll:true});renderHome();
+}
+$('next').addEventListener('click',next);
+$('again').addEventListener('click',function(){start(S,false)});
+$('wrongOnly').addEventListener('click',function(){start(S,true)});
+$('home2').addEventListener('click',function(){show('home')});
+document.addEventListener('keydown',function(e){
+  if($('quiz').hidden)return;
+  if(e.key>='1'&&e.key<='9'&&!locked){var k=+e.key-1;if(k<Q[i].o.length)pick(k)}
+  else if(e.key==='Enter'&&locked&&!$('next').hidden&&document.activeElement!==$('next')){next()}
+});
+$('addJson').addEventListener('click',function(){
+  var m=$('jsonMsg');m.className='msg';
+  try{
+    var s=JSON.parse($('json').value);
+    if(!s.id||!s.title||!Array.isArray(s.questions)||!s.questions.length)throw new Error('الحقول id و title و questions مطلوبة');
+    s.questions.forEach(function(q,k){if(!q.q||!Array.isArray(q.o)||q.o.length<2||typeof q.a!=='number'||q.a<0||q.a>=q.o.length)throw new Error('السؤال '+(k+1)+' غير صالح')});
+    store.custom=store.custom.filter(function(c){return c.id!==s.id});store.custom.push(s);save();renderHome();
+    m.className='msg ok';m.textContent='تمت إضافة «'+s.title+'» إلى القائمة.';
+  }catch(err){m.className='msg bad';m.textContent='تعذّرت الإضافة: '+err.message}
+});
+load();renderHome();
+})();
+</script>
+</body></html>
